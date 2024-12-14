@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --background: #fafafa;
-  --foreground: #111111;
+  --background: #f4f6fb;
+  --foreground: #111827;
 
   --font-family: 'Poppins', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #111111;
-    --foreground: #fafafa;
+    --background: #111827;
+    --foreground: #f4f6fb;
   }
 }
 

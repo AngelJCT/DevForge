@@ -126,7 +126,7 @@ export default function ProfileSettings({ user }) {
         <div>
           <label
             htmlFor="name"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            className="block text-sm font-medium text-gray-300"
           >
             Name
           </label>
@@ -136,14 +136,14 @@ export default function ProfileSettings({ user }) {
             id="name"
             value={formData.name}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:text-white sm:text-sm"
+            className="mt-1 block w-full rounded-md border-gray-300 bg-gray-700 text-[#f4f6fb] sm:text-sm"
           />
         </div>
 
         <div>
           <label
             htmlFor="email"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            className="block text-sm font-medium text-gray-300"
           >
             Email
           </label>
@@ -153,7 +153,7 @@ export default function ProfileSettings({ user }) {
             id="email"
             value={formData.email}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:text-white sm:text-sm"
+            className="mt-1 block w-full rounded-md border-gray-300 bg-gray-700 text-[#f4f6fb] sm:text-sm"
           />
         </div>
 
@@ -176,7 +176,7 @@ export default function ProfileSettings({ user }) {
                 id="currentPassword"
                 value={formData.currentPassword}
                 onChange={handleChange}
-                className="mt-1 px-2 block w-full rounded-md border-gray-300 dark:border-gray-700 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:text-white sm:text-sm"
+                className="mt-1 px-2 block w-full rounded-md border-gray-300 bg-gray-700 text-[#f4f6fb] sm:text-sm"
               />
             </div>
 
@@ -193,7 +193,7 @@ export default function ProfileSettings({ user }) {
                 id="newPassword"
                 value={formData.newPassword}
                 onChange={handleChange}
-                className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:text-white sm:text-sm"
+                className="mt-1 block w-full rounded-md border-gray-300 bg-gray-700 text-[#f4f6fb] sm:text-sm"
               />
             </div>
 
@@ -210,7 +210,7 @@ export default function ProfileSettings({ user }) {
                 id="confirmPassword"
                 value={formData.confirmPassword}
                 onChange={handleChange}
-                className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:text-white sm:text-sm"
+                className="mt-1 block w-full rounded-md border-gray-300 bg-gray-700 text-[#f4f6fb] sm:text-sm"
               />
             </div>
           </div>
@@ -220,7 +220,7 @@ export default function ProfileSettings({ user }) {
           <button
             type="submit"
             disabled={isLoading}
-            className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isLoading ? 'Saving...' : 'Save Changes'}
           </button>

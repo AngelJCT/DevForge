@@ -9,6 +9,7 @@ export default function SignInForm() {
   const router = useRouter();
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,6 +24,7 @@ export default function SignInForm() {
       const result = await signIn('credentials', {
         email,
         password,
+        remember: rememberMe, // Pass remember me value to the credentials provider
         redirect: false,
       });
 
@@ -48,10 +50,10 @@ export default function SignInForm() {
         </div>
       )}
       
-      <div className="rounded-md shadow-sm -space-y-px">
-        <div>
-          <label htmlFor="email" className="sr-only">
-            Email address
+      <div className="space-y-6">
+        <div className="flex flex-col gap-2">
+          <label htmlFor="email" className="block text-sm font-medium text-[#f4f6fb]">
+            Email
           </label>
           <input
             id="email"
@@ -59,12 +61,11 @@ export default function SignInForm() {
             type="email"
             autoComplete="email"
             required
-            className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-700 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:z-10 sm:text-sm dark:bg-gray-800"
-            placeholder="Email address"
+            className="appearance-none relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-700 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:z-10 sm:text-sm dark:bg-gray-800"
           />
         </div>
-        <div>
-          <label htmlFor="password" className="sr-only">
+        <div className="flex flex-col gap-2">
+          <label htmlFor="password" className="block text-sm font-medium text-[#f4f6fb]">
             Password
           </label>
           <input
@@ -73,9 +74,33 @@ export default function SignInForm() {
             type="password"
             autoComplete="current-password"
             required
-            className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-700 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:z-10 sm:text-sm dark:bg-gray-800"
-            placeholder="Password"
+            className="appearance-none relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-700 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:z-10 sm:text-sm dark:bg-gray-800"
           />
+        </div>
+      </div>
+
+      <div className="flex items-center justify-between">
+        <div className="flex items-center">
+          <input
+            id="remember-me"
+            name="remember-me"
+            type="checkbox"
+            checked={rememberMe}
+            onChange={(e) => setRememberMe(e.target.checked)}
+            className="h-4 w-4 text-[#00a1c0] focus:ring-[#037993] border-gray-300 rounded cursor-pointer"
+          />
+          <label htmlFor="remember-me" className="ml-2 block text-sm text-[#f4f6fb] cursor-pointer">
+            Remember me
+          </label>
+        </div>
+
+        <div className="text-sm">
+          <Link
+            href="/auth/forgot-password"
+            className="font-medium text-[#00a1c0] hover:text-[#037993]"
+          >
+            Forgot your password?
+          </Link>
         </div>
       </div>
 
@@ -83,7 +108,7 @@ export default function SignInForm() {
         <button
           type="submit"
           disabled={isLoading}
-          className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-[#f4f6fb] bg-[#00a1c0] hover:bg-[#037993] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#037993] disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isLoading ? 'Signing in...' : 'Sign in'}
         </button>
@@ -92,9 +117,9 @@ export default function SignInForm() {
       <div className="text-sm text-center">
         <Link
           href="/auth/signup"
-          className="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+          className="font-medium text-[#f4f6fb]"
         >
-          Don't have an account? Sign up
+          Don't have an account? <span className='text-[#00a1c0] hover:text-[#037993]'>Sign up</span>
         </Link>
       </div>
     </form>

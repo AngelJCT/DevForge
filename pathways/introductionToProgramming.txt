@@ -1,0 +1,169 @@
+Introduction to Programming Curriculum
+
+What is a Computer Program? (5 lessons)
+
+Lesson 1: Basic Computing Concepts
+
+Learning Objectives:
+Understand what a computer is
+Learn about basic computer components
+Understand binary and how computers process information
+
+
+Lesson 2: Program Execution Flow
+
+Learning Objectives:
+Understand how instructions are executed
+Learn about CPU, memory, and basic operations
+Understand program flow and sequential execution
+
+
+Lesson 3: Programming Languages Overview
+
+Learning Objectives:
+Understand different types of programming languages
+Learn about high-level vs low-level languages
+Understand interpreted vs compiled languages
+
+
+Lesson 4: Introduction to Algorithms
+
+Learning Objectives:
+Understand what an algorithm is
+Learn about algorithm properties
+Basic problem-solving strategies
+
+
+Lesson 5: Programming Paradigms
+
+Learning Objectives:
+Understand different programming approaches
+Learn about procedural programming
+Introduction to structured programming
+
+
+Compilation Process (5 lessons)
+
+Lesson 1: Source Code and Editors
+
+Learning Objectives:
+Understand what source code is
+Learn about text editors and IDEs
+Basic file management
+
+
+Lesson 2: Preprocessing
+
+Learning Objectives:
+Understand the role of preprocessor
+Learn about header files
+Understand include directives
+
+
+Lesson 3: Compilation
+
+Learning Objectives:
+Understand compilation steps
+Learn about object files
+Understand compiler errors
+
+
+Lesson 4: Linking
+
+Learning Objectives:
+Understand the linking process
+Learn about static and dynamic linking
+Understand library usage
+
+
+Lesson 5: Executable Files
+
+Learning Objectives:
+Understand executable file format
+Learn about memory sections
+Basic debugging concepts
+
+
+Basic Computer Architecture (5 lessons)
+
+Lesson 1: Computer Hardware Basics
+
+Learning Objectives:
+Understand CPU architecture
+Learn about memory hierarchy
+Understand I/O operations
+
+
+Lesson 2: Memory Organization
+
+Learning Objectives:
+Understand RAM and ROM
+Learn about memory addressing
+Understand stack and heap
+
+
+Lesson 3: CPU and Instructions
+
+Learning Objectives:
+Understand instruction set
+Learn about registers
+Basic assembly concepts
+
+
+Lesson 4: Input/Output Systems
+
+Learning Objectives:
+Understand I/O operations
+Learn about device communication
+Basic interrupt handling
+
+
+Lesson 5: System Software
+
+Learning Objectives:
+Understand operating systems
+Learn about system calls
+Basic process management
+
+
+Introduction to C Language (5 lessons)
+
+Lesson 1: C Language Overview
+
+Learning Objectives:
+Understand C's role and history
+Learn C's characteristics
+Basic C program structure
+
+
+Lesson 2: C Development Environment
+
+Learning Objectives:
+Set up C compiler
+Learn about development tools
+Basic command line usage
+
+
+Lesson 3: C Program Structure
+
+Learning Objectives:
+Understand main function
+Learn about header files
+Basic syntax rules
+
+
+Lesson 4: Basic Input/Output
+
+Learning Objectives:
+Understand printf and scanf
+Learn about standard streams
+Basic formatting
+
+
+Lesson 5: C Programming Standards
+
+Learning Objectives:
+
+Understand coding standards
+Learn about documentation
+Best practices

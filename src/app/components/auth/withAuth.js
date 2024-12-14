@@ -1,23 +1,23 @@
 'use client';
 
-import { useSession } from 'next-auth/react';
+import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
 export default function withAuth(Component) {
   return function ProtectedRoute(props) {
-    const { data: session, status } = useSession();
+    const { user, isLoaded } = useUser();
     const router = useRouter();
 
     useEffect(() => {
-      if (status === 'loading') return;
+      if (!isLoaded) return;
       
-      if (!session) {
-        router.push('/auth/signin');
+      if (!user) {
+        router.push('/sign-in');
       }
-    }, [session, status, router]);
+    }, [user, isLoaded, router]);
 
-    if (status === 'loading') {
+    if (!isLoaded) {
       return (
         <div className="min-h-screen flex items-center justify-center">
           <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
@@ -25,7 +25,7 @@ export default function withAuth(Component) {
       );
     }
 
-    if (!session) {
+    if (!user) {
       return null;
     }
 

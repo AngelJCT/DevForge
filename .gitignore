@@ -20,6 +20,9 @@
 # production
 /build
 
+# env
+.env
+
 # misc
 .DS_Store
 *.pem
@@ -30,7 +33,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # env files (can opt-in for committing if needed)
-.env*
+
 
 # vercel
 .vercel

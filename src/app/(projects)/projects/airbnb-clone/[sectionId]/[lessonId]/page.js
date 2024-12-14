@@ -6,13 +6,13 @@ import { section1 } from '@/app/data/lessons/airbnb-clone/section-1';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { useSession } from 'next-auth/react';
+import { useAuth } from '@clerk/nextjs';
 import CodePlayground from '@/app/components/playground/CodePlayground';
 import '@/app/styles/lesson.css';
 
 export default function LessonPage() {
   const { sectionId, lessonId } = useParams();
-  const { data: session } = useSession();
+  const { userId } = useAuth();
   const [lesson, setLesson] = useState(null);
   const [isCompleted, setIsCompleted] = useState(false);
   const [showSolution, setShowSolution] = useState(false);
@@ -26,25 +26,29 @@ export default function LessonPage() {
 
     // Check if lesson is completed
     const checkProgress = async () => {
-      const response = await fetch('/api/progress', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          projectId: 'airbnb-clone',
-          sectionId: parseInt(sectionId),
-          lessonId: parseInt(lessonId),
-        }),
-      });
-      const data = await response.json();
-      setIsCompleted(data.completed);
+      try {
+        const response = await fetch('/api/progress', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            projectId: 'airbnb-clone',
+            sectionId: parseInt(sectionId),
+            lessonId: parseInt(lessonId),
+          }),
+        });
+        const data = await response.json();
+        setIsCompleted(data.completed);
+      } catch (error) {
+        console.error('Error checking progress:', error);
+      }
     };
 
-    if (session?.user) {
+    if (userId) {
       checkProgress();
     }
-  }, [sectionId, lessonId, session]);
+  }, [sectionId, lessonId, userId]);
 
   const markLessonComplete = async () => {
     try {

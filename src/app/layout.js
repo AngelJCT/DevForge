@@ -1,8 +1,8 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import Providers from './providers';
 import Navigation from './components/Navigation';
 import { Poppins } from '@next/font/google';
+import { ClerkProvider } from "@clerk/nextjs";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,13 +26,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+  <ClerkProvider>
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}>
-        <Providers>
-          <Navigation />
-          <main>{children}</main>
-        </Providers>
+        <Navigation />
+        <main>{children}</main>
       </body>
     </html>
+  </ClerkProvider>
+    
   );
 }
