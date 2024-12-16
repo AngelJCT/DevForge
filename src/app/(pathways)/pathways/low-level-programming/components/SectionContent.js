@@ -19,9 +19,9 @@ export default function SectionContent({ section }) {
           <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
             {section.description}
           </p>
-          <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">
+          {/* <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">
             Objective {section.currentObjective} of {section.totalObjectives}
-          </div>
+          </div> */}
         </div>
 
         <div className="grid gap-8 lg:grid-cols-3">
@@ -35,18 +35,10 @@ export default function SectionContent({ section }) {
                 {section.objectives.map((objective, index) => (
                   <li
                     key={index}
-                    className={`flex items-start ${
-                      index + 1 === section.currentObjective
-                        ? 'text-[#00a1c0] font-medium'
-                        : 'text-gray-600 dark:text-gray-300'
-                    }`}
+                    className="flex items-start text-gray-300"
                   >
                     <span
-                      className={`inline-block w-5 h-5 ${
-                        index + 1 === section.currentObjective
-                          ? 'bg-[#00a1c0] text-[#f4f6fb]'
-                          : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200'
-                      } rounded-full text-sm flex items-center justify-center mr-2 mt-0.5`}
+                      className="w-5 h-5 p-2 bg-gray-700 text-[#f4f6fb]  rounded-full text-sm flex items-center justify-center mr-2 mt-0.5"
                     >
                       {index + 1}
                     </span>
